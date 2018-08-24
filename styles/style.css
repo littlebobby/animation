@@ -17,6 +17,7 @@ html, body {
   bottom: 13px;
   left: 13px;
   cursor: pointer;
+  transition: all 0.3s;
 }
 .feed .like-btn:hover {
   background: #718C00;
@@ -29,11 +30,22 @@ html, body {
 .feed .like-btn::before {
   content: "";
   display: block;
+  opacity: 0;
   background: seagreen;
   height: 10px;
   width: 44px;
   position: absolute;
   top: -10px;
+  left: 0;
+}
+.feed .like-btn:hover:after {
+  content: "";
+  display: block;
+  background: seagreen;
+  height: 5px;
+  width: 44px;
+  position: absolute;
+  bottom: -5px;
   left: 0;
 }
 .feed .like-btn .reaction-box {
@@ -53,8 +65,13 @@ html, body {
   background: #8959A8;
   border-radius: 20px;
   text-align: center;
-  transition-property: all;
-  transition: 1s;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 0;
+  transform: translate(0, 100px) scale(0);
+}
+.feed .like-btn .reaction-box .reaction-icon.show {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
 }
 .feed .like-btn .reaction-box .reaction-icon label {
   color: #fff;
@@ -62,10 +79,14 @@ html, body {
   position: relative;
   font-size: 11px;
   top: -24px;
+  visibility: hidden;
 }
 .feed .like-btn .reaction-box .reaction-icon:hover {
   transform: scale(1.4);
   transform-origin: bottom;
+}
+.feed .like-btn .reaction-box .reaction-icon:hover label {
+  visibility: visible;
 }
 
 /*# sourceMappingURL=style.css.map */
