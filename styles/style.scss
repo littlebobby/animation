@@ -1,0 +1,72 @@
+html, body {
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+.feed {
+  width: 500px;
+  height: 473px;
+  background-image: url(http://i.imgur.com/HckmGbj.png);
+  position: relative;
+  .like-btn {
+      width: 44px;
+      height: 25px;
+      background: #D0D0D0;
+      position: absolute;
+      bottom: 13px;
+      left: 13px;
+      cursor: pointer;
+      &:hover {
+          background: #718C00;
+          .reaction-box {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+          }
+      }
+      //! this is to fill the gap between reaction-box and its triggering like-btn
+      &::before {
+        content: '';
+        display: block;
+        background: seagreen;
+        height: 10px;
+        width: 44px;
+        position: absolute;
+        top: -10px; left: 0; 
+      }
+      .reaction-box {
+        width: 312px; height: 55px; 
+        background: #F0C674; 
+        border-radius: 28px; 
+        position: absolute;
+        bottom: 35px;
+        left: -25px;
+        display: none;
+        .reaction-icon {
+          display: inline-block;
+          height: 40px;
+          width: 40px;
+          background: #8959A8;
+          border-radius: 20px;
+          text-align: center;
+          // ???? what?
+          transition-property: all;
+          transition: 1s;
+
+          label {
+            color: #fff;
+            background: #333;
+            position: relative;
+            font-size: 11px;
+            top: -24px;
+          }
+
+          &:hover {
+            transform: scale(1.4);
+            transform-origin: bottom;
+          }
+        }
+        
+      }
+  }
+}
