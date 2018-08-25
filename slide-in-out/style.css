@@ -1,0 +1,65 @@
+#box {
+  height: 100px;
+  width: 100px;
+  margin: 20px;
+  background: salmon;
+  transition: 2s;
+}
+#box:hover {
+  background: blue;
+}
+
+.social-link {
+  /* font-size: 0; */
+  /* color: transparent;  */
+  display: block;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin-left: 80px;
+  /* background-size: auto 13px; */
+  /* background-repeat: no-repeat; */
+  /* background-position: 50%;  */
+  overflow: hidden;
+  z-index: 0;  
+  /* transition: all .1s ease .1s; */
+}
+.social-link:after {
+  content: "";
+  display: block;
+  position: relative;
+  /* left: 0; */
+  /* top: 0px; */
+  width: 20px;
+  height: 20px;
+  background: #242424;
+  /* margin-top: 0; */
+  /* transform: translateX(-102%); */
+  z-index: 100;
+  animation: slide-in-out-right 0.35s cubic-bezier(.165,.84,.44,1) both;
+}
+@keyframes slide-in-out-right {
+  0% { transform: translateX(102%) }
+  50% { transform: translateX(0) }
+  to { transform: translateX(-102%) }
+}
+
+
+.social-link:hover:after {
+  animation: slide-in-out-left 0.35s cubic-bezier(.165,.84,.44,1) both
+}
+@keyframes slide-in-out-left {
+  0% { transform: translateX(-102%) }
+  50% { transform: translateX(0) }
+  to { transform: translateX(102%) }
+}
+
+.instagram {
+  background-image: url(./assets/instagram.svg);
+  background-size: cover;
+}
+
+
+
+
+
