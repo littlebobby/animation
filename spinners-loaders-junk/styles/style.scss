@@ -1,0 +1,43 @@
+body {
+  padding: 100px;
+  background:#eee;
+}
+
+.wrap {
+  text-align: center;
+  vertical-align: middle;
+  margin-bottom: 100px;
+  background: #fff;
+  padding-bottom: 100px;
+  box-shadow: 0px 40px 60px -20px rgba(0,0,0,0.2);
+}
+
+h1 {
+  padding: 50px;
+}
+
+.spinner {
+  width: 100px;
+  height: 100px;
+  background: #eee;
+  position: relative;
+  border-radius: 50%;
+  margin: 50px;
+  display: inline-block;
+
+  &:after {
+    content: 'hi';
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  
+  &:before {
+    content: 'bye';
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+}
